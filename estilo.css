@@ -1,0 +1,88 @@
+:root {
+  --rosa: #D04188;
+  --coral: #CF6B62;
+  --lima: #C2CB20;
+  --roxo: #8667AD;
+  --verde: #4EBA6F;
+  --azul: #4C5FAB;
+  --turquesa: #33BEBD;
+  --texto: #2b2b33;
+  --suave: #5d5d6b;
+  --fundo: #fffdf8;
+  color-scheme: light;
+  --cartao: #ffffff;
+  --linha: #ece8df;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+a { color: var(--azul); }
+
+.faixa {
+  height: 8px;
+  background: linear-gradient(90deg, var(--coral), var(--lima), var(--turquesa), var(--roxo), var(--rosa));
+}
+.conteudo { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+header.topo {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 14px 0;
+}
+header.topo img { height: 56px; width: auto; }
+header.topo nav a {
+  margin-left: 18px; text-decoration: none; font-weight: 700; color: var(--texto);
+}
+header.topo nav a:hover { color: var(--rosa); }
+
+.abertura { text-align: center; padding: 28px 0 40px; }
+.abertura .logo {
+  width: min(460px, 88vw); height: auto;
+  
+}
+.abertura h1 { font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.25; margin: 18px 0 10px; }
+.abertura p { font-size: 1.2rem; color: var(--suave); max-width: 640px; margin: 0 auto; }
+
+section { padding: 36px 0; border-top: 1px solid var(--linha); }
+section h2 { font-size: 1.6rem; margin: 0 0 18px; }
+section h2::before {
+  content: ""; display: inline-block; width: 14px; height: 14px; border-radius: 50%;
+  margin-right: 10px; background: var(--cor, var(--turquesa)); vertical-align: middle;
+}
+
+.grade { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.cartao {
+  background: var(--cartao); border: 1px solid var(--linha); border-radius: 18px;
+  padding: 18px 20px; border-top: 6px solid var(--cor, var(--turquesa));
+}
+.cartao h3 { margin: 0 0 6px; font-size: 1.15rem; }
+.cartao p { margin: 0; color: var(--suave); }
+
+.contato ul { list-style: none; padding: 0; margin: 0; }
+.contato li { margin: 6px 0; }
+.botao {
+  display: inline-block; margin-top: 14px; padding: 12px 22px; border-radius: 999px;
+  background: var(--verde); color: #fff !important; font-weight: 800; text-decoration: none;
+}
+.botao:hover { filter: brightness(1.08); }
+
+.texto-longo { max-width: 720px; }
+.texto-longo h2 { margin-top: 28px; }
+.texto-longo h2::before { display: none; }
+
+footer {
+  border-top: 1px solid var(--linha); padding: 22px 0 36px; color: var(--suave); font-size: .95rem;
+}
+footer a { margin-right: 14px; }
+
+@media (max-width: 560px) {
+  header.topo { flex-direction: column; }
+  header.topo nav a { margin: 0 8px; }
+}
